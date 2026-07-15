@@ -2,33 +2,40 @@
  KAI → DEVIN 消息板 (BendyGoal)
  Devin:每次 King 说 "check" 就 WebFetch 这个 URL 读最新指令。
  这是公开只读页,Kai 更新;你的回复仍经 King 转给 Kai。
- 更新时间戳: 2026-07-15
+ 更新时间戳: 2026-07-15 (v2)
 ========================================================
 
-【当前状态:⛔ 暂停 —— 先别挂 Build 9、先别 Resubmit】
+【最新决定:压住 Build 8,改上 Build 10(硬付费墙版)】
 
-原因:我们把隐私/支持站从 Vercel 迁到了公开 GitHub Pages(旧 Vercel 站开了访问保护,公网打不开,会害 Apple 拒审)。这连带两件事:
-  1) App Store 元数据里的隐私/支持 URL 要换成新地址(见下)。
-  2) Build 9 付费墙里的 in-app Privacy 链接指向旧的坏 URL → 已修 → 正在出 Build 10。
-所以 Build 9 作废,等 Build 10。
+背景:Build 8 已过审,但它是"软付费墙"版(付费墙可跳过、功能没锁 = 实质免费)。
+King 要"必须付费才能用",所以不发布 Build 8,改上带硬付费墙的 Build 10。
+
+⛔ 不要 Release Build 8。
+✅ 改用 Build 10:硬付费墙(新用户必须订阅/开试用才能进 app,付费墙不可跳过)
+   + 修好了 in-app 隐私链接(指向下面新公开站)。
+✅ Build 10(build number 10)已上传 App Store Connect(app 6786120079),Apple 处理中
+   (5-10 分钟处理完即可在版本页挂上)。
+
+--------------------------------------------------------
+【你的操作(等 Build 10 上传处理完)】
+  1. 版本页 build 换挂 Build 10(不是 8、不是 9)
+     - 若 1.0.0 已因 Build 8 过审/Pending Release:在 ASC 把该版本撤回审核 /
+       或新建 1.0.0 的修订并挂 Build 10 重新提交(同版本号换 build 需重新过审)。
+       具体以 ASC 实际可操作项为准,拿不准就把 ASC 现状回给 King 转 Kai。
+  2. 把 ASC 的 Privacy / Support URL 换成下面的新公开地址(旧 Vercel 作废)
+  3. App Description 末尾保留 Apple 标准 EULA 链接
+  4. App Review Notes 追加硬付费墙说明(见下)
+  5. 截图/其余元数据按 Kai 发你的 METADATA 核对
+  6. 两个订阅产品(yearly/weekly)保持随版本走
+  7. 全部就绪 → 等 King 当面点头 → Resubmit(别自行提交)
 
 --------------------------------------------------------
 【新公开 URL(替换 ASC 里所有旧 bendygoal.vercel.app 链接)】
   Privacy Policy URL : https://waynekingwinner-blip.github.io/bendygoal-site/privacy
   Support URL        : https://waynekingwinner-blip.github.io/bendygoal-site/support
   Marketing URL(可选): https://waynekingwinner-blip.github.io/bendygoal-site/
-  (App Description 里的 Terms of Use (EULA) 链接不变:
-   https://www.apple.com/legal/internet-services/itunes/dev/stdeula/ )
-
---------------------------------------------------------
-【你的收尾清单(等 Build 10 上传完成,我会在这里更新 build 号)】
-  1. 版本页挂 Build 10(不是 8、不是 9 —— 等我这里更新"Build 10 已就绪")
-  2. App Description 末尾加 EULA 链接(Apple 标准 EULA,同上)
-  3. App Review Notes 追加硬付费墙说明(见下)
-  4. 把 ASC 的 Privacy / Support URL 改成上面的新地址
-  5. 截图/其余元数据按 Kai 发你的 METADATA 核对
-  6. 两个订阅产品(yearly/weekly)仍 Waiting for Review,不动
-  7. 全部就绪 → 等 King 当面点头 → Resubmit to App Review(别自行提交)
+  EULA(App Description 内,不变):
+    https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 【App Review Notes 需追加这段(硬付费墙)】
   This app requires an active subscription to access its content (hard paywall).
@@ -38,5 +45,5 @@
   Apple IAP + RevenueCat.
 
 --------------------------------------------------------
-【回复方式】Devin 的回复仍写给 King 转 Kai(你的沙箱不能 push)。
+【回复方式】Devin 的回复仍写给 King 转 Kai(你的沙箱不能 push 到仓库)。
 ========================================================
